@@ -12,11 +12,9 @@ class MathQuestionGenerator {
     }
     
     gcd(x, y) {
-		//let g = (a, b) => a === 1 && b === -1 ? 1 : b ? g(Object.is(a % b, -0) ? Math.abs(b) : b, a % b) : a;
 		let g = (a, b) => a === 1 && b === -1 ? 1 : b ? g(Math.abs(b), a % b) : a;
 		let result = g(x, y);
 		return result < 0 && Math.sign(x) === Math.sign(y) ? Math.abs(result) : result;
-		//return g(x, y);
 	}
 
     simplify(num, den, lcm = false) {

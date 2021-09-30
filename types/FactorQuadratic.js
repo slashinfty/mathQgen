@@ -1,9 +1,9 @@
 module.exports = class FactorQuadratic extends require('../index') {
-    constructor(options = {}) {
+	constructor(options = {}) {
         super();
         delete this.types;
         const params = Object.assign({
-			'coefficient': {
+            'coefficient': {
 				'min': 1,
 				'max': 1
 			},
