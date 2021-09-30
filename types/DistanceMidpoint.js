@@ -1,5 +1,8 @@
 module.exports = class DistanceMidpoint extends require('../index') {
-    constructor(params = {'min': -20, 'max': 20}) {
+    constructor(params = {
+        'min': -20,
+        'max': 20
+    }) {
         super();
         delete this.types;
 
