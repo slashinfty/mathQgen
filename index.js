@@ -10,15 +10,22 @@ class MathQuestionGenerator {
         const fn = this.types.get(type);
         return new fn(params);
     }
+    
+    gcd(x, y) {
+		//let g = (a, b) => a === 1 && b === -1 ? 1 : b ? g(Object.is(a % b, -0) ? Math.abs(b) : b, a % b) : a;
+		let g = (a, b) => a === 1 && b === -1 ? 1 : b ? g(Math.abs(b), a % b) : a;
+		let result = g(x, y);
+		return result < 0 && Math.sign(x) === Math.sign(y) ? Math.abs(result) : result;
+		//return g(x, y);
+	}
 
-    reduce(num, den, lcm = false) {
-        let gcd = (a, b) => b ? gcd(b, a % b) : a;
-        gcd = gcd(num, den);
+    simplify(num, den, lcm = false) {
+        let gcd = this.gcd(num, den);
         return lcm ? [num / gcd, den / gcd, gcd] : [num / gcd, den / gcd];
     }
 
-    negative(frac) {
-        return (frac[0] < 0 && frac[1] > 0) || (frac[0] > 0 && frac[1] < 0);
+    isNegative(obj) {
+        return typeof obj === 'object' ? (obj[0] < 0 && obj[1] > 0) || (obj[0] > 0 && obj[1] < 0) : obj < 0;
     }
 
     randInt(min, max) {
