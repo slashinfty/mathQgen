@@ -1,6 +1,6 @@
 const MathQuestionGenerator = require('./index');
 
 const mqg = new MathQuestionGenerator();
-const first = mqg.ask('Test', { x: 1 });
+const first = mqg.ask('DistanceMidpoint');
 
 console.log(first);
