@@ -28,8 +28,8 @@ module.exports = class Transformations extends require('../index') {
                 'max': 4
             },
             'dilation-reductions': true,
-			'type': 'translation'
-		}, options);
+            'type': 'translation'
+        }, options);
 
         const a = super.randInt(params.coordinates.min, params.coordinates.max);
         const b = super.randInt(params.coordinates.min, params.coordinates.max);
