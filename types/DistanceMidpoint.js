@@ -3,9 +3,9 @@ module.exports = class DistanceMidpoint extends require('../index') {
         super();
         delete this.types;
         const params = Object.assign({
-			'min': -20,
-			'max': 20
-		}, options);
+            'min': -20,
+            'max': 20
+        }, options);
 
         const a = super.randInt(params.min, params.max);
         const b = super.randInt(params.min, params.max);

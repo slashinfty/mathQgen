@@ -1,12 +1,12 @@
 module.exports = class Transformations extends require('../index') {
-	constructor(options = {}) {
-		super();
-		delete this.types;
-		const params = Object.assign({
-			'coordinates': {
-				'min': -15,
-				'max': 15
-			},
+    constructor(options = {}) {
+        super();
+        delete this.types;
+        const params = Object.assign({
+            'coordinates': {
+                'min': -15,
+                'max': 15
+            },
             'vector': {
                 'min': -10,
                 'max': 10
