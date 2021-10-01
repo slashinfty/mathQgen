@@ -1,9 +1,9 @@
 module.exports = class FactorQuadratic extends require('../index') {
 	constructor(options = {}) {
-        super();
-        delete this.types;
-        const params = Object.assign({
-            'coefficient': {
+		super();
+		delete this.types;
+		const params = Object.assign({
+			'coefficient': {
 				'min': 1,
 				'max': 1
 			},
@@ -13,7 +13,7 @@ module.exports = class FactorQuadratic extends require('../index') {
 			},
 			'gcf': false
 		}, options);
-		
+
 		let p, q, r, s;
 		do {
 			p = super.randInt(params.coefficient.min, params.coefficient.max);
@@ -33,9 +33,9 @@ module.exports = class FactorQuadratic extends require('../index') {
 		const simpPQ = super.simplify(p, q, true);
 		const simpRS = super.simplify(r, s, true);
 		const g = simpPQ[2] * simpRS[2];
-		
+
 		this.question = `${a === 1 ? '' : a}x^2${b === 0 ? '' : super.isNegative(b) ? '-' + Math.abs(b) + 'x' : '+' + b + 'x'}${super.isNegative(c) ? '-' + Math.abs(c) : '+' + c}`;
-		
+
 		this.answer = {
 			'factored': `${g === 1 ? '' : g}(${simpPQ[0] === 1 ? '' : simpPQ[0]}x${super.isNegative(simpPQ[1]) ? '-' + Math.abs(simpPQ[1]) : '+' + simpPQ[1]})(${simpRS[0] === 1 ? '' : simpRS[0]}x${super.isNegative(simpRS[1]) ? '-' + Math.abs(simpRS[1]) : '+' + simpRS[1]})`,
 			'zero_1': `${super.isNegative([simpPQ[1], simpPQ[0]]) ? '' : '-'}${Math.abs(simpPQ[0]) === 1 ? Math.abs(simpPQ[1]) : Math.abs(simpPQ[1]) + '/' + Math.abs(simpPQ[0])}`,

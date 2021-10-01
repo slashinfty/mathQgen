@@ -12,9 +12,9 @@ class MathQuestionGenerator {
     }
     
     gcd(x, y) {
-		let g = (a, b) => a === 1 && b === -1 ? 1 : b ? g(Math.abs(b), a % b) : a;
-		let result = g(x, y);
-		return result < 0 && Math.sign(x) === Math.sign(y) ? Math.abs(result) : result;
+        let g = (a, b) => a === 1 && b === -1 ? 1 : b ? g(Math.abs(b), a % b) : a;
+        let result = g(x, y);
+        return result < 0 && Math.sign(x) === Math.sign(y) ? Math.abs(result) : result;
 	}
 
     simplify(num, den, lcm = false) {
