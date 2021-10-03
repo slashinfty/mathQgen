@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 
-class MathQuestionGenerator {
+module.exports = class MathQuestionGenerator {
     constructor() {
         this.types = new Map(fs.readdirSync(path.join(__dirname, '/types')).filter(file => file.endsWith('.js')).map(file => [file.replace('.js', ''), require(`./types/${file}`)]));
     }
@@ -29,6 +29,8 @@ class MathQuestionGenerator {
     randInt(min, max) {
         return Math.floor(Math.random() * (Math.floor(max) - Math.ceil(min) + 1) + Math.ceil(min));
     }
-}
 
-module.exports = MathQuestionGenerator;
+    randFloat(min, max, places) {
+        return Math.round((Math.random() * (max - min) + min) * Math.pow(10, places)) / Math.pow(10, places);
+    }
+}

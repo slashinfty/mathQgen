@@ -1,13 +1,14 @@
 const MathQuestionGenerator = require('./index');
 
 const mqg = new MathQuestionGenerator();
-/*const first = mqg.ask('FactorQuadratic', {'coefficient': {
+const test = mqg.ask('FactorQuadratic', {'coefficient': {
 				'min': 1,
 				'max': 4
-			},'gcf':true});
+			},'gcf':false});
 
-console.log(first);*/
 
-const second = mqg.ask('Transformations', {'type': 'dilation', 'dilation-center': {'min': -5,'max': 5}});
+//const test = mqg.ask('Transformations', {'type': 'dilation', 'dilation-center': {'min': -5,'max': 5}});
 
-console.log(second);
+//const test = mqg.ask('RegularPolygon', {'given': 'apothem'});
+
+console.log(test);
